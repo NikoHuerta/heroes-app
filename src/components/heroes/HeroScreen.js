@@ -15,7 +15,8 @@ export const HeroScreen = () => {
     }
 
     const handleReturn = () => {
-        (publisher === 'DC Comics')? navigate('/dc') : navigate('/marvel');
+        //(publisher === 'DC Comics')? navigate('/dc') : navigate('/marvel');
+        navigate(-1);
     };
 
     const { superhero, publisher, alter_ego, first_appearance, characters } = hero;
