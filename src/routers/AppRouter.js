@@ -18,8 +18,8 @@ export const AppRouter = () => {
         {/* <Navbar /> */}
 
         <Routes>
-          <Route exact path="/login" element={ <LoginScreen /> }/>
-          <Route exact path="/*" element={ <DashboardRoutes /> }/>
+          <Route path="/login" element={ <LoginScreen /> }/>
+          <Route path="/*" element={ <DashboardRoutes /> }/>
         </Routes>
         
       </div>

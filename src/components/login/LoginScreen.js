@@ -3,10 +3,10 @@ import { useNavigate } from "react-router-dom";
 
 export const LoginScreen = () => {
     
-    let history = useNavigate();
+    const navigate = useNavigate();
 
-    const handleClick = () => {
-        history("/");
+    const handleLogin = () => {
+        navigate("/", { replace: true });
     };
     
     
@@ -19,7 +19,7 @@ export const LoginScreen = () => {
 
             <button
             className="btn btn-primary"
-            onClick={ handleClick }>
+            onClick={ handleLogin }>
                 Login
             </button>
         </div>

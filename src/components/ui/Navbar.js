@@ -1,7 +1,15 @@
 import React from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
 
 export const Navbar = () => {
+
+    const navigate = useNavigate();
+
+    const handleLogout = () => {
+        // navigate("/login", { replace: true });
+        navigate('/login', { replace: true });
+    }
+
     return (
         <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
             
@@ -16,26 +24,22 @@ export const Navbar = () => {
                 <div className="navbar-nav">
 
                     <NavLink 
-                        // activeClassName="active"
-                        //className=" nav-item nav-link" 
-                        className={`${isActive => (!isActive ? "" : "active")} nav-item nav-link`}
-                        // exact
+                        // className={ `${isActive => (!isActive ? "" : "active")} nav-item nav-link` }
+                        className={ ({ isActive }) => 'nav-item nav-link' + (isActive ? ' active' : '') }
                         to="/marvel"
                     >
                         Marvel
                     </NavLink>
 
                     <NavLink 
-                        // activeClassName="active"
-                        className={`${isActive => (!isActive ? "" : "active")} nav-item nav-link`}
-                        // exact
+                        className={ ({ isActive }) => 'nav-item nav-link' + (isActive ? ' active' : '') }
                         to="/dc"
                     >
                         DC
                     </NavLink>
 
                     <NavLink 
-                        className={`${isActive => (!isActive ? "" : "active")} nav-item nav-link`}
+                        className={ ({ isActive }) => 'nav-item nav-link' + (isActive ? ' active' : '') }
                         to="/search"
                     >
                         Search
@@ -43,16 +47,25 @@ export const Navbar = () => {
                 </div>
             </div>
 
-            <div className="navbar-collapse collapse w-100 order-3 dual-collapse2">
+            <div className="navbar-collapse collapse w-100 order-3 dual-collapse2 d-flex justify-content-end">
                 <ul className="navbar-nav ms-auto">
-                    <NavLink 
-                        // activeClassName="active"
-                        className={`${isActive => (!isActive ? "" : "active")} nav-item nav-link`}
-                        // exact
+                    <span className="nav-item nav-link text-info">
+                        Nicolas
+                    </span>
+                    {/* <NavLink 
+                        className={ ({ isActive }) => 'nav-item nav-link' + (isActive ? ' active' : '') }
                         to="/login"
                     >
                         Logout
-                    </NavLink>
+                    </NavLink> */}
+
+                    <button 
+                        className="nav-item nav-link btn"
+                        onClick={ handleLogout }
+                    >
+                        Logout
+                    </button>
+
                 </ul>
             </div>
         </nav>
