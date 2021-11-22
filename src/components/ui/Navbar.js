@@ -1,13 +1,25 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link, NavLink, useNavigate } from 'react-router-dom'
+
+import { AuthContext } from '../../auth/authContext';
+import { types } from '../../types/types';
 
 export const Navbar = () => {
 
     const navigate = useNavigate();
 
+    const {user, dispatch} = useContext(AuthContext);
+
     const handleLogout = () => {
-        // navigate("/login", { replace: true });
+        
+        const action = {
+            type: types.logout
+        }
+        dispatch(action);
+        
         navigate('/login', { replace: true });
+
+
     }
 
     return (
@@ -44,13 +56,19 @@ export const Navbar = () => {
                     >
                         Search
                     </NavLink>
+                    <NavLink 
+                        className={ ({ isActive }) => 'nav-item nav-link' + (isActive ? ' active' : '') }
+                        to="/about"
+                    >
+                        About
+                    </NavLink>
                 </div>
             </div>
 
             <div className="navbar-collapse collapse w-100 order-3 dual-collapse2 d-flex justify-content-end">
                 <ul className="navbar-nav ms-auto">
                     <span className="nav-item nav-link text-info">
-                        Nicolas
+                        {user.name}
                     </span>
                     {/* <NavLink 
                         className={ ({ isActive }) => 'nav-item nav-link' + (isActive ? ' active' : '') }

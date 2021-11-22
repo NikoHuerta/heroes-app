@@ -1,6 +1,5 @@
 import React, { useMemo } from 'react';
-import { useParams } from 'react-router';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useParams, Navigate, useNavigate } from 'react-router-dom';
 import { getHeroesById } from '../../selectors/getHeroById';
 
 export const HeroScreen = () => {
@@ -21,12 +20,13 @@ export const HeroScreen = () => {
 
     const { superhero, publisher, alter_ego, first_appearance, characters } = hero;
     
+    const imagePath = `../assets/heroes/${ heroeId }.jpg`;
 
     return (
         <div className="row mt-5">
             <div className="col-4">
                 <img
-                    src={`../assets/heroes/${ heroeId }.jpg`}
+                    src={ imagePath }
                     alt={ superhero }
                     className="img-thumbnail animate__animated animate__fadeInLeft"
                 />

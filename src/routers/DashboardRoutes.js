@@ -3,6 +3,7 @@ import {
     Routes,
     Route
   } from 'react-router-dom';
+import { AboutScreen } from '../components/about/AboutScreen';
 import { DcScreen } from '../components/dc/DcScreen';
 import { HeroScreen } from '../components/heroes/HeroScreen';
 import { MarvelScreen } from '../components/marvel/MarvelScreen';
@@ -18,8 +19,9 @@ export const DashboardRoutes = () => {
                     <Route path="marvel" element={ <MarvelScreen /> }/>
                     <Route path="dc" element={ <DcScreen /> }/>
                     <Route path="search" element={ <SearchScreen /> }/>
+                    <Route path="about" element={ <AboutScreen /> }/>
 
-                    <Route path="hero/:heroeId/*" element={ <HeroScreen /> }/>
+                    <Route path="hero/:heroeId" element={ <HeroScreen /> }/>
                     <Route path="*" element={ <SearchScreen /> } />
                 </Routes>
             </div>

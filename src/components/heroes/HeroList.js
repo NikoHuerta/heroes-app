@@ -8,7 +8,7 @@ export const HeroList = ({ publisher }) => {
     
     return (
         // <div className="card-columns">
-        <div className="row row-cols-1 row-cols-md-3 g-4 animate__animated animate__fadeIn">
+        <div className="row row-cols-1 row-cols-md-3 g-3 animate__animated animate__fadeIn">
             {
                 heroes.map( hero  => (
                     <HeroCard key={ hero.id }

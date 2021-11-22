@@ -3,10 +3,16 @@ import { Link } from 'react-router-dom';
 import './HeroCard.css';
 
 export const HeroCard = ({ id, superhero, publisher, alter_ego, first_appearance, characters }) => {
+    
+    const imagePath = `../assets/heroes/${ id }.jpg`;
+
     return (
-    <>
+    <>  
         <Link to={`../hero/${id}`} className="my-card">
-        <img src={`./assets/heroes/${ id }.jpg`} className="img img-responsive" alt={ superhero }/>
+        <img    src={ imagePath } 
+                className="img img-responsive animate__animated animate__fadeIn" 
+                alt={ superhero }
+        />
         <div className="profile-name">{ superhero }</div>
         <div className="profile-position">{ alter_ego }</div>
         <div className="profile-overview">
