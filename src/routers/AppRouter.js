@@ -1,28 +1,37 @@
 import React from 'react'
 import {
-    BrowserRouter as Router,
+    BrowserRouter,
     Routes,
     Route
   } from 'react-router-dom';
 import { LoginScreen } from '../components/login/LoginScreen';
 import { DashboardRoutes } from './DashboardRoutes';
-
-// import { Navbar } from '../components/ui/Navbar';
+import { PrivateRoute } from './PrivateRoute';
+import { PublicRoute } from './PublicRoute';
 
 
 
 export const AppRouter = () => {
     return (
-    <Router>
+    <BrowserRouter>
       <div>
-        {/* <Navbar /> */}
 
         <Routes>
-          <Route path="/login" element={ <LoginScreen /> }/>
-          <Route path="/*" element={ <DashboardRoutes /> }/>
+          <Route path="/login" element={ 
+                    <PublicRoute>
+                      <LoginScreen />
+                    </PublicRoute> 
+            }/>
+          <Route path="/*" element={ 
+                    <PrivateRoute>
+                      <DashboardRoutes />  
+                    </PrivateRoute>
+            }/>
+
+          {/* <Route path="/*" element={ <DashboardRoutes /> }/> */}
         </Routes>
         
       </div>
-    </Router>
+    </BrowserRouter>
     );
 }

@@ -3,21 +3,33 @@ import { useNavigate } from "react-router-dom";
 import { AuthContext } from '../../auth/authContext';
 import { types } from '../../types/types';
 
+import { useForm } from '../../hooks/useForm';
+
 export const LoginScreen = () => {
     
     const navigate = useNavigate();
     const { dispatch } = useContext(AuthContext);
 
-    const handleLogin = () => {
+    const [{ nameLogin }, handleInputChange] = useForm({nameLogin: ""});
+
+    const handleLogin = (e) => {
+        
+        e.preventDefault();
+        if(nameLogin.trim().length <= 1){
+            return ;
+        }
+
         const action = {
             type: types.login,
             payload: {
-                name: 'Nicolas',
-                email: 'nhuertaf@icloud.com'
+                name: nameLogin,
+                email: 'test@mail.testdom'
             }
         }
         dispatch(action);
-        navigate("/", { replace: true });
+
+        const lastPage = localStorage.getItem('lastPath') || "/" ;
+        navigate(lastPage, { replace: true });
     };
     
     
@@ -28,11 +40,25 @@ export const LoginScreen = () => {
             <h1> Login Screen </h1>
             <hr/>
 
+
+            <form onSubmit={ handleLogin }>
+                <input
+                    type="text"
+                    placeholder="Enter your name"
+                    className="form-control"
+
+                    autoComplete="off"
+                    name="nameLogin"
+                    onChange={ handleInputChange }
+                    value={ nameLogin }
+                />
+            <br />
             <button
             className="btn btn-primary"
-            onClick={ handleLogin }>
+            type="submit">
                 Login
             </button>
+            </form>
         </div>
     )
 }
