@@ -1,0 +1,161 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pruebas en <AppRouter /> Debe de mostrar el Login si no esta autenticado 1`] = `
+<div>
+  <div
+    className="container mt-5"
+  >
+    <h1>
+       Login Screen 
+    </h1>
+    <hr />
+    <form
+      onSubmit={[Function]}
+    >
+      <input
+        autoComplete="off"
+        className="form-control"
+        name="nameLogin"
+        onChange={[Function]}
+        placeholder="Enter your name"
+        type="text"
+        value=""
+      />
+      <br />
+      <button
+        className="btn btn-primary"
+        type="submit"
+      >
+        Login
+      </button>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`Pruebas en <AppRouter /> Debe de mostrar el componente SearchScreen si esta autenticado 1`] = `
+<div>
+  Array [
+    <nav
+      className="navbar navbar-expand-sm navbar-dark bg-dark"
+    >
+      <a
+        className="navbar-brand"
+        href="/"
+        onClick={[Function]}
+      >
+        Asociaciones
+      </a>
+      <div
+        className="navbar-collapse"
+      >
+        <div
+          className="navbar-nav"
+        >
+          <a
+            className="nav-item nav-link"
+            href="/marvel"
+            onClick={[Function]}
+          >
+            Marvel
+          </a>
+          <a
+            className="nav-item nav-link"
+            href="/dc"
+            onClick={[Function]}
+          >
+            DC
+          </a>
+          <a
+            aria-current="page"
+            className="nav-item nav-link active"
+            href="/search"
+            onClick={[Function]}
+          >
+            Search
+          </a>
+          <a
+            className="nav-item nav-link"
+            href="/about"
+            onClick={[Function]}
+          >
+            About
+          </a>
+        </div>
+      </div>
+      <div
+        className="navbar-collapse collapse w-100 order-3 dual-collapse2 d-flex justify-content-end"
+      >
+        <ul
+          className="navbar-nav ms-auto"
+        >
+          <span
+            className="nav-item nav-link text-info"
+          >
+            Nicolas
+          </span>
+          <button
+            className="nav-item nav-link btn"
+            onClick={[Function]}
+          >
+            Logout
+          </button>
+        </ul>
+      </div>
+    </nav>,
+    <div
+      className="container mt-2"
+    >
+      <div>
+        <h1>
+           Search Screen
+        </h1>
+        <hr />
+        <div
+          className="row"
+        >
+          <h4>
+            Search Form
+          </h4>
+          <hr />
+          <form
+            onSubmit={[Function]}
+          >
+            <input
+              autoComplete="off"
+              className="form-control"
+              name="searchString"
+              onChange={[Function]}
+              placeholder="Find Your Hero"
+              type="text"
+              value=""
+            />
+            <button
+              className="btn m-1 btn-block btn-outline-primary"
+              type="submit"
+            >
+              Search
+            </button>
+          </form>
+        </div>
+        <div>
+          <br />
+          <h4>
+            Results
+          </h4>
+          <hr />
+          <br />
+          <div
+            className="alert alert-info"
+          >
+            Search a Hero
+          </div>
+          <div
+            className="row row-cols-1 row-cols-md-3 g-4"
+          />
+        </div>
+      </div>
+    </div>,
+  ]
+</div>
+`;
