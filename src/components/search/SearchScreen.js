@@ -16,6 +16,7 @@ export const SearchScreen = () => {
     const heroesFiltered = useMemo( () => getHeroesByName( q ), [q] );
 
     const handleSearch = (e) =>{
+        
         e.preventDefault();
         if(searchString.trim().length <= 1){
             return ;

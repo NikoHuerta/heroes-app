@@ -40,8 +40,6 @@ describe('Pruebas en <DashboardRoutes />', () => {
         expect(wrapper).toMatchSnapshot();    
         expect(wrapper.find('.text-info').text().trim()).toBe('Pepe');
         expect(wrapper.find('h1').text().trim()).toBe('DC Screen');
-
-    
     });
 
     test('Debe de mostrarse correctamente Marvel', () => {
@@ -55,7 +53,6 @@ describe('Pruebas en <DashboardRoutes />', () => {
         expect(wrapper).toMatchSnapshot();    
         expect(wrapper.find('.text-info').text().trim()).toBe('Pepe');
         expect(wrapper.find('h1').text().trim()).toBe('Marvel Screen');
-    
     });
 
     test('Debe de mostrarse correctamente About', () => {
@@ -69,7 +66,6 @@ describe('Pruebas en <DashboardRoutes />', () => {
         expect(wrapper).toMatchSnapshot();    
         expect(wrapper.find('.text-info').text().trim()).toBe('Pepe');
         expect(wrapper.find('h1').text().trim()).toBe('About Screen');
-    
     });
 
     test('Debe de mostrarse correctamente Search', () => {
