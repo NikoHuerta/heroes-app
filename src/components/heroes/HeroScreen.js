@@ -2,6 +2,10 @@ import React, { useMemo } from 'react';
 import { useParams, Navigate, useNavigate } from 'react-router-dom';
 import { getHeroesById } from '../../selectors/getHeroById';
 
+// import batman from '../../assets/heroes/dc-batman.jpg'; //recurso estatico
+
+const heroeImages = require.context('../../assets/heroes', true);
+
 export const HeroScreen = () => {
 
     const { heroeId } = useParams();
@@ -14,13 +18,13 @@ export const HeroScreen = () => {
     }
 
     const handleReturn = () => {
-        //(publisher === 'DC Comics')? navigate('/dc') : navigate('/marvel');
         navigate(-1);
     };
 
     const { superhero, publisher, alter_ego, first_appearance, characters } = hero;
     
-    const imagePath = `../assets/heroes/${ heroeId }.jpg`;
+    // const imagePath = `../assets/heroes/${ heroeId }.jpg`; //desde public/assets
+    const imagePath = heroeImages(`./${ heroeId }.jpg`).default;
 
     return (
         <div className="row mt-5">

@@ -2,9 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './HeroCard.css';
 
+const heroeImages = require.context('../../assets/heroes', true);
+
+
 export const HeroCard = ({ id, superhero, publisher, alter_ego, first_appearance, characters }) => {
     
-    const imagePath = `../assets/heroes/${ id }.jpg`;
+    const imagePath = heroeImages(`./${ id }.jpg`).default;
 
     return (
     <>  

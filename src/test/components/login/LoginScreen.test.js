@@ -79,7 +79,6 @@ describe('Pruebas en <LoginScreen />', () => {
                 preventDefault(){}
             });    
         }
-        
         handleClick();
 
         const action = {
