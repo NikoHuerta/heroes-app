@@ -1,13 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './HeroCard.css';
+import { heroImages } from '../../helpers/heroImages';
 
-const heroeImages = require.context('../../assets/heroes', true);
+// const heroeImages = require.context('../../assets/heroes', true);
 
 
 export const HeroCard = ({ id, superhero, publisher, alter_ego, first_appearance, characters }) => {
-    
-    const imagePath = heroeImages(`./${ id }.jpg`).default;
+
+    const imagePath = heroImages(`./${ id }.jpg`).default;
 
     return (
     <>  

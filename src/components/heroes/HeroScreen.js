@@ -1,10 +1,11 @@
 import React, { useMemo } from 'react';
 import { useParams, Navigate, useNavigate } from 'react-router-dom';
 import { getHeroesById } from '../../selectors/getHeroById';
+import { heroImages } from '../../helpers/heroImages';
+
 
 // import batman from '../../assets/heroes/dc-batman.jpg'; //recurso estatico
-
-const heroeImages = require.context('../../assets/heroes', true);
+// const heroeImages = require.context('../../assets/heroes', true); //con helpers
 
 export const HeroScreen = () => {
 
@@ -24,7 +25,7 @@ export const HeroScreen = () => {
     const { superhero, publisher, alter_ego, first_appearance, characters } = hero;
     
     // const imagePath = `../assets/heroes/${ heroeId }.jpg`; //desde public/assets
-    const imagePath = heroeImages(`./${ heroeId }.jpg`).default;
+    const imagePath = heroImages(`./${ heroeId }.jpg`).default;
 
     return (
         <div className="row mt-5">
